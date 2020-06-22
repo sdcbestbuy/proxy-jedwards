@@ -1,0 +1,17 @@
+{
+  "name": "bestbuyproxy",
+  "version": "1.0.0",
+  "description": "bestBuyProxy",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Benjamin P",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
