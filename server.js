@@ -19,7 +19,7 @@ app.all('*',(req,res)=>{
     console.log('Reviews Req Made')
     proxy.web(req,res,{target:'http://111111-env.eba-9uquamkj.us-east-2.elasticbeanstalk.com/'})
     // res.status(200)
-  } else if (req._parsedOriginalUrl.path === '/carousel') {
+  } else if (req._parsedOriginalUrl.path === '/products') {
     console.log('Carousel Request')
     proxy.web(req,res,{target:'http://newcarousel-env.eba-irp2rurw.us-east-2.elasticbeanstalk.com/'})
     // res.status(200)
