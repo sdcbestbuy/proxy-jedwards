@@ -12,7 +12,7 @@ var httpProxy = require('http-proxy'); //PROXY SERVER
 // const reviewsProxy = createProxyMiddleware('/api/getReviews', { target: 'localhost:6969/getReviews' });
 
 
-app.use(express["static"](path.join(__dirname, './frontEnd')));
+app.use(express["static"](path.join(__dirname, '/frontEnd/dist')));
 app.use(express.json());
 var proxy = httpProxy.createProxyServer({});
 app.all('*', function (req, res) {
@@ -20,7 +20,7 @@ app.all('*', function (req, res) {
   console.log("REQUEST MADE", endpoint[0]);
 
   if (endpoint === '/api/getReviews') {
-    console.log('Reviews Req Made');
+    console.log('Reviews Req Made for Query', req.query);
     proxy.web(req, res, {
       target: 'http://111111-env.eba-9uquamkj.us-east-2.elasticbeanstalk.com/'
     }); // res.status(200)

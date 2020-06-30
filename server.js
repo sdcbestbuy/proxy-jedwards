@@ -7,7 +7,7 @@ const httpProxy = require('http-proxy');
 
 // const reviewsProxy = createProxyMiddleware('/api/getReviews', { target: 'localhost:6969/getReviews' });
 
-app.use(express.static(path.join(__dirname, './frontEnd')));
+app.use(express.static(path.join(__dirname, '/frontEnd/dist')));
 app.use(express.json())
 
 const proxy = httpProxy.createProxyServer({});
@@ -17,7 +17,7 @@ app.all('*',(req,res)=>{
   let endpoint = req.params[0];
   console.log("REQUEST MADE",endpoint[0])
   if (endpoint === '/api/getReviews'){
-    console.log('Reviews Req Made')
+    console.log('Reviews Req Made for Query',req.query)
     proxy.web(req,res,{target:'http://111111-env.eba-9uquamkj.us-east-2.elasticbeanstalk.com/'})
     // res.status(200)
   } else if (endpoint === '/products') {
