@@ -16,7 +16,7 @@ const proxy = httpProxy.createProxyServer({});
 app.all('*',(req,res)=>{
   let endpoint = req.params[0];
   console.log("REQUEST MADE",endpoint[0])
-  if (endpoint === '/api/getReviews'){
+  if (endpoint === '/api/getReviews' || endpoint === '/api/getListOfRealProducts' || endpoint === '/api/getListOfRealProductsThumbnails'){
     console.log('Reviews Req Made for Query',req.query)
     proxy.web(req,res,{target:'http://111111-env.eba-9uquamkj.us-east-2.elasticbeanstalk.com/'})
     // res.status(200)
