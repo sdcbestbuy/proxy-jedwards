@@ -28,7 +28,7 @@ app.all('*',(req,res)=>{
     console.log('SearchBar Req')
     proxy.web(req,res,{target:'http://searchbarricardo2-dev.us-east-2.elasticbeanstalk.com/'})
     // res.status(200)
-  } else if (endpoint === '/display'){
+  } else if (endpoint === '/display' || endpoint === '/images'){
     console.log('Image Display Req')
     proxy.web(req,res,{target:'http://imagecomponent-env-1.eba-4mfwjdhg.us-east-2.elasticbeanstalk.com/'})
     // res.status(200)
