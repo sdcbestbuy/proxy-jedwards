@@ -1,7 +1,7 @@
 {
-  "name": "bestbuyproxy",
+  "name": "SDC Proxy",
   "version": "1.0.0",
-  "description": "bestBuyProxy",
+  "description": "System design capstone proxy",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HRATX49-BestBuy/ProxyServer_Polancich.git"
+    "url": "https://github.com/sdcbestbuy/proxy-jedwards.git"
   },
-  "author": "Benjamin P",
+  "author": "Joshua Edwards",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.10.3",
