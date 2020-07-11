@@ -1,5 +1,5 @@
 {
-  "name": "SDC Proxy",
+  "name": "sdcproxy",
   "version": "1.0.0",
   "description": "System design capstone proxy",
   "main": "index.html",
@@ -13,11 +13,8 @@
     "url": "https://github.com/sdcbestbuy/proxy-jedwards.git"
   },
   "author": "Joshua Edwards",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.8.3",
     "axios": "^0.19.2",
     "express": "^4.17.1",
@@ -26,6 +23,14 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.6.0",
+    "nodemon": "^2.0.2",
+    "style-loader": "^1.2.1"
   }
 }
