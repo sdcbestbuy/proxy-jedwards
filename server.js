@@ -13,7 +13,7 @@ app.use(express.json())
 const proxy = httpProxy.createProxyServer({});
 
 
-app.all('*',(req,res)=>{
+app.all('*', (req,res)=>{
   let endpoint = req.params[0];
   console.log("REQUEST MADE",endpoint[0])
   if (endpoint === '/api/getReviews' || endpoint === '/api/getListOfRealProducts' || endpoint === '/api/getListOfRealProductsThumbnails'){
@@ -35,6 +35,28 @@ app.all('*',(req,res)=>{
   } else {
     console.log('Unknown Endpoint ',endpoint)
     res.status(400).send(endpoint)
+  }
+})
+
+app.get('/getReviews', async (req, res) => {
+
+    try {
+      const review = await proxy.web(req,res,{target:'localhost:8008/getReviews'})
+      res.json(review);
+    } catch {
+
+      res.status(500).json({message: err.message});
+    }
+})
+
+app.post('/postReviews', async (req, res) => {
+
+  try {
+    const review = await proxy.web(req,res,{target:'localhost:8008/postReviews'})
+    res.json(review);
+  } catch {
+
+    res.status(500).json({message: err.message});
   }
 })
 
