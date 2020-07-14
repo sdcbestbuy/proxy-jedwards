@@ -1,6 +1,4 @@
 node_modules
-webpack.config.js
-.babelrc
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
